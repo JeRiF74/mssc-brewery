@@ -29,6 +29,7 @@ public class BeerController {
     public ResponseEntity saveNewBeer(BeerDto beerDto) {
         BeerDto savedDto = beerService.generateNewBeer(beerDto);
         HttpHeaders httpHeaders = new HttpHeaders();
+        System.out.println("Hello World");
         httpHeaders.add("Location" , "/api/v1/beer/" + savedDto.getId().toString());
         return new ResponseEntity(httpHeaders , HttpStatus.CREATED);
     }
