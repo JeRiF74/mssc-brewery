@@ -5,12 +5,18 @@ import az.micro.msscbrawery.services.CustomerService;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @RequestMapping("/api/v1/customer")
 @RestController
+@Validated
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -26,13 +32,13 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity addNewCustomer (@RequestBody CustomerDto customerDto) {
+    public ResponseEntity addNewCustomer (@RequestBody @Valid CustomerDto customerDto) {
         CustomerDto savedCustomerDto = customerService.saveCustomer(customerDto);
         return new ResponseEntity(savedCustomerDto , HttpStatus.CREATED);
     }
 
     @PutMapping("/{customerId}")
-    public ResponseEntity updateCustomer (@PathVariable UUID customerId , @RequestBody CustomerDto customerDto) {
+    public ResponseEntity updateCustomer (@PathVariable UUID customerId , @Valid @RequestBody CustomerDto customerDto) {
 
         customerService.updateCustomer(customerId,customerDto);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
@@ -44,5 +50,15 @@ public class CustomerController {
         customerService.deleteById(customerId);
     }
 
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<List> validationErrorHandler(ConstraintViolationException e) {
 
+        List<String> errors = new ArrayList<>(e.getConstraintViolations().size());
+        e.getConstraintViolations().forEach(
+                constraintViolation -> errors.add(
+                        constraintViolation.getPropertyPath() + " : " + constraintViolation.getMessage()
+                )
+        );
+        return new ResponseEntity<>(errors , HttpStatus.BAD_REQUEST);
+    }
 }
