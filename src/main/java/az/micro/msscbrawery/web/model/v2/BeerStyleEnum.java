@@ -1,4 +1,4 @@
-package az.micro.msscbrawery.model.v2;
+package az.micro.msscbrawery.web.model.v2;
 
 public enum BeerStyleEnum {
 

@@ -1,8 +1,7 @@
-package az.micro.msscbrawery.controller;
+package az.micro.msscbrawery.web.controller;
 
-import az.micro.msscbrawery.model.CustomerDto;
-import az.micro.msscbrawery.services.CustomerService;
-import org.apache.coyote.Response;
+import az.micro.msscbrawery.web.model.CustomerDto;
+import az.micro.msscbrawery.web.services.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;

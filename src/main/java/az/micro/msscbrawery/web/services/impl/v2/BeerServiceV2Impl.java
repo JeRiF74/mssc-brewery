@@ -1,8 +1,8 @@
-package az.micro.msscbrawery.services.impl.v2;
+package az.micro.msscbrawery.web.services.impl.v2;
 
-import az.micro.msscbrawery.model.v2.BeerDtoV2;
-import az.micro.msscbrawery.model.v2.BeerStyleEnum;
-import az.micro.msscbrawery.services.v2.BeerServiceV2;
+import az.micro.msscbrawery.web.model.v2.BeerDtoV2;
+import az.micro.msscbrawery.web.model.v2.BeerStyleEnum;
+import az.micro.msscbrawery.web.services.v2.BeerServiceV2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

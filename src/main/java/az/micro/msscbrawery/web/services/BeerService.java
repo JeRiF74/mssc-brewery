@@ -1,6 +1,6 @@
-package az.micro.msscbrawery.services;
+package az.micro.msscbrawery.web.services;
 
-import az.micro.msscbrawery.model.BeerDto;
+import az.micro.msscbrawery.web.model.BeerDto;
 
 import java.util.UUID;
 

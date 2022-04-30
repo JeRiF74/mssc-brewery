@@ -1,7 +1,7 @@
-package az.micro.msscbrawery.controller;
+package az.micro.msscbrawery.web.controller;
 
-import az.micro.msscbrawery.model.BeerDto;
-import az.micro.msscbrawery.services.BeerService;
+import az.micro.msscbrawery.web.model.BeerDto;
+import az.micro.msscbrawery.web.services.BeerService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
-package az.micro.msscbrawery.services;
+package az.micro.msscbrawery.web.services;
 
-import az.micro.msscbrawery.model.CustomerDto;
+import az.micro.msscbrawery.web.model.CustomerDto;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package az.micro.msscbrawery.model.v2;
+package az.micro.msscbrawery.domain;
 
 
 import lombok.AllArgsConstructor;
@@ -12,11 +12,9 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BeerDtoV2 {
+public class Customer {
 
     private UUID id;
-    private String beerName;
-    private BeerStyleEnum beerStyle;
-    private Long upc;
+    private String name;
 
 }

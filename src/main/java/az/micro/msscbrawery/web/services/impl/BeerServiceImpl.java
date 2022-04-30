@@ -1,7 +1,7 @@
-package az.micro.msscbrawery.services.impl;
+package az.micro.msscbrawery.web.services.impl;
 
-import az.micro.msscbrawery.model.BeerDto;
-import az.micro.msscbrawery.services.BeerService;
+import az.micro.msscbrawery.web.model.BeerDto;
+import az.micro.msscbrawery.web.services.BeerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

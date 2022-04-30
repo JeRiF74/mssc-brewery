@@ -1,4 +1,4 @@
-package az.micro.msscbrawery.model;
+package az.micro.msscbrawery.web.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
